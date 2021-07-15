@@ -5,9 +5,21 @@ import java.util.Scanner;
 public class Tax {
 
   public static void main(String[] args) {
-    Scanner scan = new Scanner(System.in);
-    int i = scan.nextInt();
-    System.out.println("number : "+i);
+   Scanner scan = new Scanner(System.in);
+    System.out.println("Enter salary :");
+    double salary = scan.nextDouble();
+    System.out.println("Enter bonus :");
+    double bonus = scan.nextDouble();
+    System.out.println("Enter interest :");
+    double interest = scan.nextDouble();
+    System.out.println("Enter dividends :");
+    double div = scan.nextDouble();
+    System.out.println("Enter capital gains :");
+    double gains = scan.nextDouble();
+
+    double diff = ((Income.getIncome(salary,bonus,interest,gains))-(Expenses.getExpense(salary,bonus)))/12;
+    //Calculator.calculate();
+    System.out.println("Nett Taxable Income : R "+diff);
 
   }
 
