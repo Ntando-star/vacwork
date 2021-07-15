@@ -5,10 +5,10 @@ import java.util.Scanner;
 public class Tax {
 
   public static void main(String[] args) {
-   Scanner scan = new Scanner(System.in);
-    System.out.println("Enter salary :");
+    Scanner scan = new Scanner(System.in);
+    System.out.println("Please Enter Annual CTC salary :");
     double salary = scan.nextDouble();
-    System.out.println("Enter bonus :");
+    System.out.println("Please Enter bonus :");
     double bonus = scan.nextDouble();
     System.out.println("Enter interest :");
     double interest = scan.nextDouble();
@@ -17,9 +17,9 @@ public class Tax {
     System.out.println("Enter capital gains :");
     double gains = scan.nextDouble();
 
-    double taxableIncome = ((Income.getIncome(salary,bonus,interest,gains))-(Expenses.getExpense(salary,bonus)));
-   System.out.println("Nett Taxable Income : R "+ taxableIncome);
-   System.out.println("Nett Tax payable = " + Calculator.calculate(taxableIncome));
+    double taxableIncome = ((Income.getIncome(salary, bonus, interest, gains)) - (Expenses.getExpense(salary, bonus)));
+    System.out.println("Nett Taxable Income : R " + taxableIncome);
+    System.out.println("Nett Tax payable = " + Calculator.calculate(taxableIncome));
 
   }
 

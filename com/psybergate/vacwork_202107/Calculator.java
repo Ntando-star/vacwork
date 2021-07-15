@@ -22,6 +22,8 @@ public class Calculator {
     for (int i = 0; i < bands.size(); i++) {
       if (taxableIncome <= bands.get(i).getMax() && taxableIncome >= bands.get(i).getMin()) {
         System.out.println("Band = " + (i + 1));
+        // medical credit research
+        // 15714 --> primary rebate
         payableTax = calculateTaxPayable(i, taxableIncome) - 15714.0 - 12000.0;
         break;
       }

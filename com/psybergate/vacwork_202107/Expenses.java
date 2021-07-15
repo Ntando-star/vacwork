@@ -9,7 +9,7 @@ public class Expenses {
     System.out.println("Enter Retirement Funding : ");
     double fund = scan.nextDouble();
     //System.out.println("Enter Travel allowance : ");
-    double travel = 80000;
+    double travel = 80000; // this is the max I think not the value always present
     fund = (salary+bonus) * 0.275;
     double expense = fund + travel;
     return expense;
