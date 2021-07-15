@@ -4,7 +4,7 @@ import java.util.*;
 
 public class Calculator {
 
-  private static List<Band> bands;
+  private static List<Band> bands = new ArrayList<>();
 
   private static void getBands(){
     bands.add(new Band(0.0, 216200.0,0.18)); // 150k 0
@@ -15,16 +15,18 @@ public class Calculator {
     bands.add(new Band(782201.0, 1665600.0,0.41));
     bands.add(new Band(1665601.0, 1_000_000_000.0,0.45));
   }
-  public static void calculate(Double taxableIncome) {
+  public static double calculate(Double taxableIncome) {
     getBands();
+    double payableTax = 0;
     // 1. find the band
     for (int i = 0; i < bands.size(); i++) {
-      if (taxableIncome < bands.get(i).getMax()) {
+      if (taxableIncome <= bands.get(i).getMax() && taxableIncome >= bands.get(i).getMin()) {
         System.out.println("Band = " + (i + 1));
-        calculateTaxPayable(i, taxableIncome);
+        payableTax = calculateTaxPayable(i, taxableIncome) - 15714.0 - 12000.0;
         break;
       }
     }
+    return  payableTax;
   }
 
   private static double calculateTaxPayable(int band, double taxableIncome) {
@@ -32,7 +34,7 @@ public class Calculator {
     double lastBand = 0;
     for (int i = 0; i <= band; i++) {
       if (i == band) {
-        lastBand = taxableIncome - bands.get(i).getMin() * bands.get(i).getPercentage();
+        lastBand = (taxableIncome - bands.get(i).getMin()) * bands.get(i).getPercentage();
         break;
       }
       else {

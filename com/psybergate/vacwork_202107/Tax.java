@@ -18,8 +18,8 @@ public class Tax {
     double gains = scan.nextDouble();
 
     double taxableIncome = ((Income.getIncome(salary,bonus,interest,gains))-(Expenses.getExpense(salary,bonus)));
-    Calculator.calculate(taxableIncome);
-    System.out.println("Nett Taxable Income : R "+ taxableIncome);
+   System.out.println("Nett Taxable Income : R "+ taxableIncome);
+   System.out.println("Nett Tax payable = " + Calculator.calculate(taxableIncome));
 
   }
 
