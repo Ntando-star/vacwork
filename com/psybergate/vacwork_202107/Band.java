@@ -23,4 +23,11 @@ public class Band {
     return percentage;
   }
 
+  public Double incompleteBandTax(Double taxableIncome) {
+    return (taxableIncome - this.min) * this.percentage;
+  }
+  public Double fullBandTax() {
+    return (this.max - this.min) * this.percentage;
+  }
+
 }

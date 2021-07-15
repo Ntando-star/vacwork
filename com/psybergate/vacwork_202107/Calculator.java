@@ -34,11 +34,11 @@ public class Calculator {
     double lastBand = 0;
     for (int i = 0; i <= band; i++) {
       if (i == band) {
-        lastBand = (taxableIncome - bands.get(i).getMin()) * bands.get(i).getPercentage();
+        lastBand = bands.get(i).incompleteBandTax(taxableIncome);
         break;
       }
       else {
-        result += (bands.get(i).getMax() - bands.get(i).getMin()) * bands.get(i).getPercentage();
+        result += bands.get(i).fullBandTax();
       }
     }
 
