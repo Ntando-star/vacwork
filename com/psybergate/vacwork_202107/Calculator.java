@@ -4,13 +4,13 @@ import java.util.*;
 
 public class Calculator {
 
-  private static List<Band> bands = DataHandler.getBands();
+  private static List<TaxBracket> taxBrackets = TaxTable.getTaxBrackets();
 
   public static double calculate(Double taxableIncome) {
     double payableTax = 0;
     // 1. find the band
-    for (int i = 0; i < bands.size(); i++) {
-      if (taxableIncome <= bands.get(i).getMax() && taxableIncome >= bands.get(i).getMin()) {
+    for (int i = 0; i < taxBrackets.size(); i++) {
+      if (taxableIncome <= taxBrackets.get(i).getMax() && taxableIncome >= taxBrackets.get(i).getMin()) {
         System.out.println("Band = " + (i + 1));
         // medical credit research
         // 15714 --> primary rebate
@@ -28,11 +28,11 @@ public class Calculator {
     double lastBand = 0;
     for (int i = 0; i <= band; i++) {
       if (i == band) {
-        lastBand = bands.get(i).incompleteBandTax(taxableIncome);
+        lastBand = taxBrackets.get(i).incompleteBandTax(taxableIncome);
         break;
       }
       else {
-        result += bands.get(i).fullBandTax();
+        result += taxBrackets.get(i).fullBandTax();
       }
     }
 

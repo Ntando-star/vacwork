@@ -3,8 +3,9 @@ package com.psybergate.vacwork_202107;
 import java.util.Scanner;
 
 public class Expenses {
-  public static double getExpense(double salary, double bonus) {
-
+  public static double calculateExpense(double salary, double bonus) {
+    // single responsibilities
+    //
     Scanner scan = new Scanner(System.in);
     System.out.println("Enter Retirement Funding : ");
     double funds = scan.nextDouble();

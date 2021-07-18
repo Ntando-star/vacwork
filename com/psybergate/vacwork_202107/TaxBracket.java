@@ -1,11 +1,11 @@
 package com.psybergate.vacwork_202107;
 
-public class Band {
+public class TaxBracket {
   private Double min;
   private Double max;
   private Double percentage;
 
-  public Band(Double min, Double max, Double percentage) {
+  public TaxBracket(Double min, Double max, Double percentage) {
     this.min = min;
     this.max = max;
     this.percentage = percentage;
