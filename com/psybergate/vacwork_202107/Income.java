@@ -3,6 +3,8 @@ package com.psybergate.vacwork_202107;
 public class Income {
 
   public static final int INTEREST_EXEMPTION = 23800;
+  
+  public double gains;
 
   public static double getIncome(double salary, double bonus, double interest, double gains) {
 
