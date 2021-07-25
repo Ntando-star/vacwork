@@ -8,7 +8,7 @@ public class Calculator {
 
   public static double calculate(Double taxableIncome) {
     double payableTax = 0;
-    // 1. find the band
+    // 1. find the bracket
     for (int i = 0; i < taxBrackets.size(); i++) {
       if (taxableIncome <= taxBrackets.get(i).getMax() && taxableIncome >= taxBrackets.get(i).getMin()) {
         System.out.println("Band = " + (i + 1));

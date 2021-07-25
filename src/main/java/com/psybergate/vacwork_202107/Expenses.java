@@ -5,11 +5,8 @@ import java.util.Scanner;
 public class Expenses {
   public static double calculateExpense(double salary, double bonus) {
     // single responsibilities
-    //
+    // Remove the questions in this function and have inputs and parameters
     Scanner scan = new Scanner(System.in);
-    System.out.println("Enter Retirement Funding : ");
-    double funds = scan.nextDouble();
-    System.out.println("Enter Travel allowance : ");
     double travel = scan.nextDouble();
     if (travel > 80000) {
       travel = 80000;
